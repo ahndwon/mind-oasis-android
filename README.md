@@ -1,2 +1,2 @@
-# mind-oasis-android
-Mind Oasis Android
+# Mind Oasis Android
+Mind Oasis android client
