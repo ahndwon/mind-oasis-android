@@ -1,7 +1,8 @@
-package xyz.thingapps.mind_oasis
+package xyz.thingapps.mind_oasis.controllers
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import xyz.thingapps.mind_oasis.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,4 +10,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
 }

@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <drawable name="navigationSelected">#000000</drawable>
+    <drawable name="navigationUnselected">#bbbbbb</drawable>
 </resources>
