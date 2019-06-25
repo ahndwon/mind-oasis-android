@@ -3,4 +3,9 @@
     <string name="title_bookmark">bookmark</string>
     <string name="title_share">share</string>
     <string name="title_settings">settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test_maxim">김연아는 이길 수 없다</string>
+    <string name="test_author">- 아사다 마오</string>
 </resources>

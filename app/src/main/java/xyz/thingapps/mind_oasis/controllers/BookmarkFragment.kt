@@ -9,10 +9,10 @@ import androidx.lifecycle.ViewModelProviders
 import xyz.thingapps.mind_oasis.R
 import xyz.thingapps.mind_oasis.viewmodel.BookmarkViewModel
 
-class Bookmark : Fragment() {
+class BookmarkFragment : Fragment() {
 
     companion object {
-        fun newInstance() = Bookmark()
+        fun newInstance() = BookmarkFragment()
     }
 
     private lateinit var viewModel: BookmarkViewModel
