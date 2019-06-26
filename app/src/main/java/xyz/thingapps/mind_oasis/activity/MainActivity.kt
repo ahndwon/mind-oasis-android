@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.acitivity
+package xyz.thingapps.mind_oasis.activity
 
 import android.net.Uri
 import android.os.Bundle
@@ -16,6 +16,7 @@ import xyz.thingapps.mind_oasis.util.setStatusBarColor
 import xyz.thingapps.mind_oasis.util.setStatusBarIconDark
 
 class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteractionListener, AnkoLogger {
+
     override fun onFragmentInteraction(uri: Uri) {
         debug("onFragmentInteraction")
     }
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
                 .commit()
 
         val list = listOf(
+                R.id.navigation_home,
                 R.id.navigation_bookmark, R.id.navigation_share,
                 R.id.navigation_settings
         )
@@ -38,18 +40,26 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
             when (list.indexOf(menuItem.itemId)) {
                 0 -> {
                     supportFragmentManager.beginTransaction()
+                            .replace(R.id.mainContainer,
+                                    HomeFragment(), HomeFragment::class.java.name)
+                            .commit()
+                    true
+                }
+
+                1 -> {
+                    supportFragmentManager.beginTransaction()
                             .replace(R.id.mainContainer, BookmarkFragment())
                             .addToBackStack(BookmarkFragment::class.java.name)
                             .commit()
                     true
                 }
 
-                1 -> {
+                2 -> {
                     toast("Share")
                     true
                 }
 
-                2 -> {
+                3 -> {
                     supportFragmentManager.beginTransaction()
                             .replace(R.id.mainContainer, SettingsFragment())
                             .addToBackStack(SettingsFragment::class.java.name)
@@ -63,8 +73,8 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
             }
         }
 
-        setStatusBarColor(android.R.color.white)
-        setStatusBarIconDark(true)
+        setStatusBarColor(R.color.darkNavy)
+        setStatusBarIconDark(false)
     }
 
     override fun onAttachFragment(fragment: Fragment) {
@@ -77,4 +87,5 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
             fragment.listener = this
         }
     }
+
 }

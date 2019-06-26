@@ -10,4 +10,5 @@
     <string name="test_author">- 아사다 마오</string>
 
     <string name="author_format">- %s</string>
+    <string name="title_home">home</string>
 </resources>

@@ -2,7 +2,9 @@ package xyz.thingapps.mind_oasis.util
 
 import android.app.Activity
 import android.os.Build
+import android.view.Gravity
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 fun Activity.setStatusBarIconDark(isDark: Boolean) {
@@ -22,4 +24,9 @@ fun Activity.setStatusBarIconDark(isDark: Boolean) {
 
 fun Activity.setStatusBarColor(colorId: Int) {
     this.window.statusBarColor = ContextCompat.getColor(this, colorId)
+}
+
+fun Toast.showCenter() {
+    this.setGravity(Gravity.CENTER, 0, 0)
+    this.show()
 }

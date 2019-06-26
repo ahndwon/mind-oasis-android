@@ -2,10 +2,15 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#000000</color>
 
     <color name="lightBlack">#1f1f1f</color>
+    <color name="darkNavy">#0D2F55</color>
+    <color name="veryDarkNavy">#0E2846</color>
+    <color name="white">#FFFFFF</color>
+    <color name="lightWhite">#eeeeee</color>
 
     <drawable name="navigationSelected">#000000</drawable>
-    <drawable name="navigationUnselected">#bbbbbb</drawable>
+    <drawable name="navigationSelectedWhite">#FFFFFF</drawable>
+    <drawable name="navigationUnselected">#666666</drawable>
 </resources>
