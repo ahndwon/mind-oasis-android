@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.utils
+package xyz.thingapps.mind_oasis.util
 
 import androidx.databinding.Observable
 import androidx.databinding.PropertyChangeRegistry

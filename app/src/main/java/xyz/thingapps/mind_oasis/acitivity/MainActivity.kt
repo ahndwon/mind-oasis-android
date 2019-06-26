@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.controllers
+package xyz.thingapps.mind_oasis.acitivity
 
 import android.net.Uri
 import android.os.Bundle
@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.toast
 import org.jetbrains.anko.debug
+import org.jetbrains.anko.toast
 import xyz.thingapps.mind_oasis.R
-import xyz.thingapps.mind_oasis.utils.setStatusBarColor
-import xyz.thingapps.mind_oasis.utils.setStatusBarIconDark
+import xyz.thingapps.mind_oasis.fragment.BookmarkFragment
+import xyz.thingapps.mind_oasis.fragment.HomeFragment
+import xyz.thingapps.mind_oasis.fragment.SettingsFragment
+import xyz.thingapps.mind_oasis.util.setStatusBarColor
+import xyz.thingapps.mind_oasis.util.setStatusBarIconDark
 
 class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteractionListener, AnkoLogger {
     override fun onFragmentInteraction(uri: Uri) {
@@ -22,7 +25,8 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.mainContainer, HomeFragment(), HomeFragment::class.java.name)
+                .replace(R.id.mainContainer,
+                        HomeFragment(), HomeFragment::class.java.name)
                 .commit()
 
         val list = listOf(

@@ -2,7 +2,7 @@ package xyz.thingapps.mind_oasis.viewmodel
 
 import androidx.databinding.Bindable
 import xyz.thingapps.mind_oasis.model.Maxim
-import xyz.thingapps.mind_oasis.utils.ObservableViewModel
+import xyz.thingapps.mind_oasis.util.ObservableViewModel
 
 class HomeViewModel : ObservableViewModel() {
 

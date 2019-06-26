@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.controllers
+package xyz.thingapps.mind_oasis.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
