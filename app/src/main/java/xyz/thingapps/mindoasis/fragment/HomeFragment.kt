@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.fragment
+package xyz.thingapps.mindoasis.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,15 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import kotlinx.android.synthetic.main.home_fragment.view.*
-import xyz.thingapps.mind_oasis.R
-import xyz.thingapps.mind_oasis.adapter.MaximTestAdapter
+import xyz.thingapps.mindoasis.R
+import xyz.thingapps.mindoasis.adapter.MaximTestAdapter
 
 class HomeFragment : Fragment() {
     private var backPressedTime = 0L
-
-    companion object {
-        const val CLICK_INTERVAL_TIME = 2000L
-    }
 
     @SuppressLint("ShowToast")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

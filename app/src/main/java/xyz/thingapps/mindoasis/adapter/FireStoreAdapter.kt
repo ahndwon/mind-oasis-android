@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.adapter
+package xyz.thingapps.mindoasis.adapter
 
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView

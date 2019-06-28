@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.fragment
+package xyz.thingapps.mindoasis.fragment
 
 import android.content.Context
 import android.net.Uri
@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import xyz.thingapps.mind_oasis.R
+import xyz.thingapps.mindoasis.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

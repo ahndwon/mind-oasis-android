@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.viewmodel
+package xyz.thingapps.mindoasis.viewmodel
 
 import androidx.lifecycle.ViewModel;
 

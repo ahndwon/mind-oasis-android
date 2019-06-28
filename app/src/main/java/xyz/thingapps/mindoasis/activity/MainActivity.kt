@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.activity
+package xyz.thingapps.mindoasis.activity
 
 import android.net.Uri
 import android.os.Bundle
@@ -8,14 +8,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.debug
 import org.jetbrains.anko.toast
-import xyz.thingapps.mind_oasis.R
-import xyz.thingapps.mind_oasis.fragment.BookmarkFragment
-import xyz.thingapps.mind_oasis.fragment.HomeFragment
-import xyz.thingapps.mind_oasis.fragment.SettingsFragment
-import xyz.thingapps.mind_oasis.util.setStatusBarColor
-import xyz.thingapps.mind_oasis.util.setStatusBarIconDark
+import xyz.thingapps.mindoasis.R
+import xyz.thingapps.mindoasis.fragment.BookmarkFragment
+import xyz.thingapps.mindoasis.fragment.HomeFragment
+import xyz.thingapps.mindoasis.fragment.SettingsFragment
+import xyz.thingapps.mindoasis.util.setStatusBarColor
+import xyz.thingapps.mindoasis.util.setStatusBarIconDark
 
 class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteractionListener, AnkoLogger {
+    private var backPressedTime = 0L
+
+    companion object {
+        const val FINISH_INTERVAL_TIME = 2000L
+    }
 
     override fun onFragmentInteraction(uri: Uri) {
         debug("onFragmentInteraction")
@@ -40,8 +45,7 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
             when (list.indexOf(menuItem.itemId)) {
                 0 -> {
                     supportFragmentManager.beginTransaction()
-                            .replace(R.id.mainContainer,
-                                    HomeFragment(), HomeFragment::class.java.name)
+                        .replace(R.id.mainContainer, HomeFragment(), HomeFragment::class.java.name)
                             .commit()
                     true
                 }
@@ -49,7 +53,7 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
                 1 -> {
                     supportFragmentManager.beginTransaction()
                             .replace(R.id.mainContainer, BookmarkFragment())
-                            .addToBackStack(BookmarkFragment::class.java.name)
+//                            .addToBackStack(BookmarkFragment::class.java.name)
                             .commit()
                     true
                 }
@@ -62,7 +66,7 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
                 3 -> {
                     supportFragmentManager.beginTransaction()
                             .replace(R.id.mainContainer, SettingsFragment())
-                            .addToBackStack(SettingsFragment::class.java.name)
+//                            .addToBackStack(SettingsFragment::class.java.name)
                             .commit()
                     true
                 }
@@ -73,7 +77,7 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
             }
         }
 
-        setStatusBarColor(R.color.darkNavy)
+        setStatusBarColor(R.color.veryDarkNavy)
         setStatusBarIconDark(false)
     }
 
@@ -88,4 +92,15 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
         }
     }
 
+    override fun onBackPressed() {
+        val tempTime = System.currentTimeMillis()
+        val intervalTime = tempTime - backPressedTime
+
+        if (intervalTime in 0..FINISH_INTERVAL_TIME) {
+            super.onBackPressed()
+        } else {
+            backPressedTime = tempTime
+            toast(getString(R.string.backButtonMessage))
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.model
+package xyz.thingapps.mindoasis.model
 
 data class Maxim(
     val id: String = "",

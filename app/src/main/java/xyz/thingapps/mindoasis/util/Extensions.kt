@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.util
+package xyz.thingapps.mindoasis.util
 
 import android.app.Activity
 import android.os.Build

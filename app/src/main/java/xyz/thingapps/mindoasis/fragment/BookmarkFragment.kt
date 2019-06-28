@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.fragment
+package xyz.thingapps.mindoasis.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import xyz.thingapps.mind_oasis.R
-import xyz.thingapps.mind_oasis.viewmodel.BookmarkViewModel
+import xyz.thingapps.mindoasis.R
+import xyz.thingapps.mindoasis.viewmodel.BookmarkViewModel
 
 class BookmarkFragment : Fragment() {
 

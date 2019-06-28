@@ -1,4 +1,4 @@
-package xyz.thingapps.mind_oasis.adapter
+package xyz.thingapps.mindoasis.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,14 +7,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_maxim.view.*
-import xyz.thingapps.mind_oasis.R
-import xyz.thingapps.mind_oasis.fragment.HomeFragment
-import xyz.thingapps.mind_oasis.model.Maxim
-import xyz.thingapps.mind_oasis.util.Dummies
-import xyz.thingapps.mind_oasis.util.showCenter
+import xyz.thingapps.mindoasis.R
+import xyz.thingapps.mindoasis.model.Maxim
+import xyz.thingapps.mindoasis.util.Dummies
+import xyz.thingapps.mindoasis.util.showCenter
 
 class MaximTestAdapter : RecyclerView.Adapter<MaximTestAdapter.ViewHolder>() {
     private var backPressedTime = 0L
+
+    companion object {
+        const val CLICK_INTERVAL_TIME = 2000L
+    }
 
     override fun getItemCount(): Int {
         return Dummies.dummyMaximList.size
@@ -32,7 +35,7 @@ class MaximTestAdapter : RecyclerView.Adapter<MaximTestAdapter.ViewHolder>() {
             val tempTime = System.currentTimeMillis()
             val intervalTime = tempTime - backPressedTime
 
-            if (intervalTime in 0..HomeFragment.CLICK_INTERVAL_TIME) {
+            if (intervalTime in 0..CLICK_INTERVAL_TIME) {
                 Toast.makeText(it.context, "북마크 되었습니다", Toast.LENGTH_SHORT).showCenter()
             } else {
                 backPressedTime = tempTime

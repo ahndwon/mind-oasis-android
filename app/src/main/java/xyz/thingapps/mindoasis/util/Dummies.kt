@@ -1,6 +1,6 @@
-package xyz.thingapps.mind_oasis.util
+package xyz.thingapps.mindoasis.util
 
-import xyz.thingapps.mind_oasis.model.Maxim
+import xyz.thingapps.mindoasis.model.Maxim
 import java.util.*
 
 class Dummies {

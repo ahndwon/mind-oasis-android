@@ -24,6 +24,7 @@
         android:clickable="true"
         android:focusable="true"
         android:textSize="16sp"
+        android:elevation="12dp"
         app:itemIconTint="@color/selector_bottom_navigation_color"
         app:itemTextColor="@color/selector_bottom_navigation_color"
         app:labelVisibilityMode="unlabeled"
