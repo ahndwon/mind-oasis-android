@@ -26,10 +26,10 @@ import xyz.thingapps.mindoasis.util.MAXIM_DB_NAME
 /**
  * The Room database for this app
  */
-@Database(entities = [Plant::class], version = 1, exportSchema = false)
+@Database(entities = [Bookmark::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun plantDao(): PlantDao
+    abstract fun bookmarkDao(): BookmarkDao
 
     companion object {
 

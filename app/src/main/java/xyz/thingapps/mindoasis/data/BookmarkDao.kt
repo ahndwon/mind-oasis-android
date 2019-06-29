@@ -16,26 +16,25 @@
 
 package xyz.thingapps.mindoasis.data
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 /**
- * The Data Access Object for the Plant class.
+ * The Data Access Object for the Bookmark class.
  */
 @Dao
-interface PlantDao {
-    @Query("SELECT * FROM plants ORDER BY name")
-    fun getPlants(): LiveData<List<Plant>>
+interface BookmarkDao {
+    @Query("SELECT * FROM bookmarks ORDER BY dateStamp")
+    fun getBookmarks(): List<Bookmark>
 
-    @Query("SELECT * FROM plants WHERE growZoneNumber = :growZoneNumber ORDER BY name")
-    fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): LiveData<List<Plant>>
-
-    @Query("SELECT * FROM plants WHERE id = :plantId")
-    fun getPlant(plantId: String): LiveData<Plant>
+//    @Query("SELECT * FROM plants WHERE growZoneNumber = :growZoneNumber ORDER BY name")
+//    fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): LiveData<List<Bookmark>>
+//
+//    @Query("SELECT * FROM plants WHERE id = :plantId")
+//    fun getPlant(plantId: String): LiveData<Bookmark>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(plants: List<Plant>)
+    fun insert(bookmark: Bookmark)
 }

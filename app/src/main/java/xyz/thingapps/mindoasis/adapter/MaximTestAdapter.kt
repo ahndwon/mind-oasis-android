@@ -14,6 +14,7 @@ import xyz.thingapps.mindoasis.util.showCenter
 
 class MaximTestAdapter : RecyclerView.Adapter<MaximTestAdapter.ViewHolder>() {
     private var backPressedTime = 0L
+    private var maximList: List<Maxim> = emptyList()
 
     companion object {
         const val CLICK_INTERVAL_TIME = 2000L
