@@ -7,4 +7,40 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SettingButtonTextView">
+        <item name="android:textColor">@color/textLightBlack</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="SettingTextView">
+        <item name="android:textColor">@color/textDarkGray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:background">@color/whiteDark</item>
+    </style>
+
+    <style name="NavySettingButtonTextView">
+        <item name="android:textColor">@color/whiteDark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:background">@color/darkNavy</item>
+    </style>
+
+    <style name="NavySettingTextView">
+        <item name="android:textColor">@color/whiteDark</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:background">@color/darkNavy</item>
+    </style>
+
 </resources>

@@ -13,5 +13,13 @@
     <string name="title_home">home</string>
 
     <string name="backButtonMessage">\'뒤로\' 버튼 한번 더 누르면 종료됩니다.</string>
+    <string name="basic_info">기본</string>
+    <string name="enquire">문의/건의 하기</string>
+    <string name="personal_info_policy">개인정보 처리 방침</string>
+    <string name="credit">크레딧</string>
+
+    <string name="mind_oasis_app_android_ko">마음오아시스 앱 Android</string>
+    <string name="all_rights_reserved_ko">Thing Apps All rights reserved</string>
+
 
 </resources>

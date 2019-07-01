@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:showIn="@layout/settings_fragment">
+
+    <TextView
+        style="@style/NavySettingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:text="@string/basic_info" />
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/whiteDark" />-->
+
+    <TextView
+        android:id="@+id/emailButton"
+        style="@style/NavySettingButtonTextView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/enquire" />
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/whiteDark" />-->
+
+
+    <TextView
+        android:id="@+id/policyButton"
+        style="@style/NavySettingButtonTextView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/personal_info_policy" />
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/whiteDark" />-->
+
+    <TextView
+        android:id="@+id/creditButton"
+        style="@style/NavySettingButtonTextView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/credit" />
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/whiteDark" />-->
+
+</LinearLayout>

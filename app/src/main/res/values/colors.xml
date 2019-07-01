@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#0E2846</color>
+    <color name="colorPrimaryDark">#13355A</color>
     <color name="colorAccent">#000000</color>
 
     <color name="lightBlack">#1f1f1f</color>
-    <color name="darkNavy">#0D2F55</color>
-    <color name="veryDarkNavy">#0E2846</color>
+    <color name="darkNavy">#103A69</color>
+    <color name="veryDarkNavy">#13355A</color>
     <color name="white">#FFFFFF</color>
     <color name="lightWhite">#eeeeee</color>
+
+    <color name="whiteDark">#f4f4f4</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray">#aaaaaa</color>
+
+    <color name="textLightBlack">#474747</color>
+    <color name="textLightGray">#a2a2a2</color>
+    <color name="textDarkGray">#7e7e7e</color>
+
 
     <drawable name="navigationSelected">#000000</drawable>
     <drawable name="navigationSelectedWhite">#FFFFFF</drawable>

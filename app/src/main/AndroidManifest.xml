@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xyz.thingapps.mindoasis">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".SharedApplication"
         android:allowBackup="true"
