@@ -19,7 +19,6 @@
     <color name="textLightGray">#a2a2a2</color>
     <color name="textDarkGray">#7e7e7e</color>
 
-
     <drawable name="navigationSelected">#000000</drawable>
     <drawable name="navigationSelectedWhite">#FFFFFF</drawable>
     <drawable name="navigationUnselected">#666666</drawable>

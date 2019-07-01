@@ -34,4 +34,5 @@
 #-keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson
--keep class xyz.thingapps.mind_oasis.model.** { *; }
+-keep class xyz.thingapps.thingphrase.model.** { *; }
+-keep class xyz.thingapps.thingphrase.data.Bookmark { *; }

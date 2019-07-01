@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">띵언</string>
+    <string name="app_name">오늘의 띵언</string>
     <string name="title_bookmark">bookmark</string>
     <string name="title_share">share</string>
     <string name="title_settings">settings</string>
