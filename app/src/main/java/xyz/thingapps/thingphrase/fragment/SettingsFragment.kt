@@ -21,6 +21,14 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.settings_fragment, container, false)
+
+        view.shareAppButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.send_app_link_text))
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "앱 공유하기"))
+        }
+
         view.emailButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$DEV_EMAIL"))
             startActivity(Intent.createChooser(intent, getString(R.string.send_mail)))
@@ -31,6 +39,7 @@ class SettingsFragment : Fragment() {
         view.creditButton.setOnClickListener {
             CreditDialogFragment().show(fragmentManager, CreditDialogFragment::class.java.name)
         }
+
 
         val versionName =
             activity?.packageManager?.getPackageInfo(activity?.packageName, 0)?.versionName

@@ -23,6 +23,8 @@
     <string name="no">아니오</string>
 
     <string name="no_bookmarks">북마크된 명언이 없습니다.\n명언을 더블 클릭하여 북마크에 추가하세요.</string>
+    <string name="send_app_link_text">오늘의 띵언\n하루에 명언 한 개씩!\n
+        "https://play.google.com/store/apps/details?id=xyz.thingapps.thingphrase"</string>
 
 
     <string name="mind_oasis_app_android_ko">띵언 앱 Android</string>
@@ -30,6 +32,7 @@
     <string name="personal_info_terms_ko">개인정보 보호 및 약관</string>
     <string name="personal_info_policy_ko">개인정보 처리 방침</string>
     <string name="url_policy">https://thingapps.xyz/privacy_policy.html</string>
+    <string name="share_app">앱 공유하기</string>
 
 
 </resources>
