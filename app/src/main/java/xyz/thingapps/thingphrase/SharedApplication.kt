@@ -29,6 +29,16 @@ class SharedApplication : Application() {
             }
         }
 
+    var nextMaximTutorial: Boolean?
+        get() = preferences.getBoolean(PREFERENCE_BOOKMARK_TUTORIAL, true)
+        set(value) {
+            if (value == null) {
+                preferences.edit().remove(PREFERENCE_BOOKMARK_TUTORIAL).apply()
+            } else {
+                preferences.edit().putBoolean(PREFERENCE_BOOKMARK_TUTORIAL, value).apply()
+            }
+        }
+
     private val preferences: SharedPreferences
         get() = getSharedPreferences(PREFERENCE_DOCUMENT_NAME, Context.MODE_PRIVATE)
 
@@ -45,11 +55,10 @@ class SharedApplication : Application() {
     companion object {
         const val PREFERENCE_LAST_MAXIM_UPDATE = "last_maxim_update"
         const val PREFERENCE_MAXIM_INDEX = "maxim_index"
+        const val PREFERENCE_BOOKMARK_TUTORIAL = "bookmark_tutorial"
         const val PREFERENCE_DOCUMENT_NAME = "xyz.thingapps.mindoasis"
     }
-
 }
-
 
 val Context.sharedApp: SharedApplication
     get() = applicationContext as SharedApplication

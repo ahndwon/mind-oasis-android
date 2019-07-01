@@ -1,5 +1,8 @@
 package xyz.thingapps.thingphrase.fragment
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
+import android.animation.ValueAnimator.INFINITE
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -63,50 +66,13 @@ class HomeFragment : Fragment(), AnkoLogger {
 //        val factory = context?.let { InjectorUtils.providePlantListViewModelFactory(it) }
         bookmarkViewModel =
             ViewModelProviders.of(this@HomeFragment).get(BookmarkViewModel::class.java)
-        bookmarkViewModel
 
-        adapter.maximList = viewModel.maximList
-//        adapter.onEnd = { position ->
-//            viewModel.getMaxims(disposeBag) { listSize ->
-//                adapter.notifyItemRangeChanged(position, listSize)
-//            }
-//        }
-
-
-        adapter.onDoubleClick = { maxim ->
-            bookmark(maxim)
-        }
-
-        adapter.onLongClick = { maxim ->
-            val items = arrayOf("다른 명언 보기", "북마크 하기")
-
-            this@HomeFragment.context?.let { context ->
-                AlertDialog.Builder(
-                    context
-                ).setItems(items) { _, position ->
-                    when (position) {
-                        0 -> {
-                            val index = (0..MAX_INDEX).random()
-                            activity?.sharedApp?.maximIndex = index
-                            activity?.sharedApp?.maximUpdate = Instant.now().toEpochMilli()
-
-                            resetFragment()
-                        }
-
-                        1 -> {
-                            bookmark(maxim)
-                        }
-                    }
-                }.show()
-            }
-        }
+        setupAdapter()
 
         val lastUpdate = activity?.sharedApp?.maximUpdate ?: 0L
-
         val lastUpdateDay = Instant.ofEpochMilli(lastUpdate).atZone(ZoneId.systemDefault())
 
         val current = Instant.now().toEpochMilli()
-
         val currentUpdateDay = Instant.ofEpochMilli(current).atZone(ZoneId.systemDefault())
 
         val index = if (lastUpdateDay.isSameDay(currentUpdateDay)) {
@@ -129,9 +95,22 @@ class HomeFragment : Fragment(), AnkoLogger {
                 }
             }
 
-
         viewModel.getMaxim(index) {
             onSuccess.invoke()
+        }
+
+        val isTutorial = context?.sharedApp?.nextMaximTutorial ?: true
+
+        if (isTutorial) {
+            view?.handImageView?.visibility = View.VISIBLE
+            view?.tutorialTextView?.visibility = View.VISIBLE
+
+            ObjectAnimator.ofFloat(view?.handImageView, "translationY", 75f).apply {
+                duration = 2000
+                repeatMode = ValueAnimator.RESTART
+                repeatCount = INFINITE
+                start()
+            }
         }
 
         // Data Insertion to FireStore
@@ -140,6 +119,48 @@ class HomeFragment : Fragment(), AnkoLogger {
 //        viewModel.getMaxims(disposeBag) {
 //            adapter.notifyDataSetChanged()
 //        }
+    }
+
+    private fun setupAdapter() {
+        adapter.maximList = viewModel.maximList
+
+//        adapter.onEnd = { position ->
+//            viewModel.getMaxims(disposeBag) { listSize ->
+//                adapter.notifyItemRangeChanged(position, listSize)
+//            }
+//        }
+
+        adapter.onDoubleClick = { maxim ->
+            bookmark(maxim)
+
+        }
+
+        adapter.onLongClick = { maxim ->
+            val items = arrayOf("다른 명언 보기", "북마크 하기")
+
+            this@HomeFragment.context?.let { context ->
+                AlertDialog.Builder(
+                    context
+                ).setItems(items) { _, position ->
+                    when (position) {
+                        0 -> {
+                            val index = (0..MAX_INDEX).random()
+                            activity?.sharedApp?.maximIndex = index
+                            activity?.sharedApp?.maximUpdate = Instant.now().toEpochMilli()
+                            resetFragment()
+                        }
+
+                        1 -> {
+                            bookmark(maxim)
+                        }
+                    }
+                }.show()
+            }
+
+            context?.sharedApp?.nextMaximTutorial = false
+            view?.handImageView?.visibility = View.GONE
+            view?.tutorialTextView?.visibility = View.GONE
+        }
     }
 
     private fun resetFragment() {
