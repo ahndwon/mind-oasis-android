@@ -2,10 +2,14 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
     app:cardBackgroundColor="@color/darkNavy"
     app:cardCornerRadius="12dp">
 
@@ -22,21 +26,22 @@
             android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:textSize="20sp"
-            android:text="김연아는 이길 수 없다."
+            android:textSize="18sp"
+            android:lineSpacingExtra="6dp"
+            tool:text="김연아는 이길 수 없다. 김연아는 이길 수 없다. 김연아는 이길 수 없다. 김연아는 이길 수 없다."
             android:textColor="@color/lightWhite" />
 
         <TextView
             android:id="@+id/authorTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:layout_gravity="end"
-            android:text="- 아사다 마오"
+            tool:text="- 아사다 마오"
             android:textColor="@color/lightWhite" />
 
     </LinearLayout>

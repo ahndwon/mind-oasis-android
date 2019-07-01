@@ -1,9 +1,16 @@
 package xyz.thingapps.mindoasis.data
 
-class BookmarkRepository private constructor(private val bookmarkDao: BookmarkDao) {
+import androidx.lifecycle.LiveData
 
-    fun getBookmarks() = bookmarkDao.getBookmarks()
-    fun insert(bookmark: Bookmark) = bookmarkDao.insert(bookmark)
+class BookmarkRepository(private val bookmarkDao: BookmarkDao) {
+
+    fun allBookmarks(): LiveData<List<Bookmark>> {
+        return bookmarkDao.getBookmarks()
+    }
+
+    suspend fun insert(bookmark: Bookmark) {
+        bookmarkDao.insert(bookmark)
+    }
 
     companion object {
 

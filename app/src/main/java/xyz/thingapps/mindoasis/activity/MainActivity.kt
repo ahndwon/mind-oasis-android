@@ -37,7 +37,8 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
 
         val list = listOf(
                 R.id.navigation_home,
-                R.id.navigation_bookmark, R.id.navigation_share,
+            R.id.navigation_bookmark,
+//                R.id.navigation_share,
                 R.id.navigation_settings
         )
 
@@ -57,13 +58,13 @@ class MainActivity : AppCompatActivity(), SettingsFragment.OnFragmentInteraction
                             .commit()
                     true
                 }
+//
+//                2 -> {
+//                    toast("Share")
+//                    true
+//                }
 
                 2 -> {
-                    toast("Share")
-                    true
-                }
-
-                3 -> {
                     supportFragmentManager.beginTransaction()
                             .replace(R.id.mainContainer, SettingsFragment())
 //                            .addToBackStack(SettingsFragment::class.java.name)

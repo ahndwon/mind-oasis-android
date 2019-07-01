@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.bookmark_fragment.view.*
-import org.jetbrains.anko.support.v4.runOnUiThread
 import xyz.thingapps.mindoasis.R
 import xyz.thingapps.mindoasis.adapter.BookmarkAdapter
-import xyz.thingapps.mindoasis.util.InjectorUtils
-import xyz.thingapps.mindoasis.util.runOnIoThread
 import xyz.thingapps.mindoasis.viewmodel.BookmarkViewModel
 
 class BookmarkFragment : Fragment() {
@@ -36,19 +34,23 @@ class BookmarkFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val factory =
-            context?.let { InjectorUtils.providePlantListViewModelFactory(it) }
+//        val factory =
+//            context?.let { InjectorUtils.providePlantListViewModelFactory(it) }
 
         viewModel =
-            ViewModelProviders.of(this@BookmarkFragment, factory).get(BookmarkViewModel::class.java)
-        adapter.bookmarks = viewModel.bookmarkList
+            ViewModelProviders.of(this@BookmarkFragment).get(BookmarkViewModel::class.java)
+//        adapter.bookmarks = viewModel.bookmarkList
 
-        runOnIoThread {
-            viewModel.getBookmarks()
-            runOnUiThread {
-                adapter.notifyDataSetChanged()
-            }
-        }
+        viewModel.allBookmarks.observe(this, Observer { bookmarks ->
+            bookmarks?.let { adapter.setBookmarks(it) }
+        })
+
+//        runOnIoThread {
+//            viewModel.getBookmarks()
+//            runOnUiThread {
+//                adapter.notifyDataSetChanged()
+//            }
+//        }
 
 
     }

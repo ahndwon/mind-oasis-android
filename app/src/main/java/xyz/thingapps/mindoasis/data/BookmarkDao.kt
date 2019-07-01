@@ -16,6 +16,7 @@
 
 package xyz.thingapps.mindoasis.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -27,7 +28,7 @@ import androidx.room.Query
 @Dao
 interface BookmarkDao {
     @Query("SELECT * FROM bookmarks ORDER BY dateStamp")
-    fun getBookmarks(): List<Bookmark>
+    fun getBookmarks(): LiveData<List<Bookmark>>
 
 //    @Query("SELECT * FROM plants WHERE growZoneNumber = :growZoneNumber ORDER BY name")
 //    fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): LiveData<List<Bookmark>>
@@ -36,5 +37,5 @@ interface BookmarkDao {
 //    fun getPlant(plantId: String): LiveData<Bookmark>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(bookmark: Bookmark)
+    suspend fun insert(bookmark: Bookmark)
 }

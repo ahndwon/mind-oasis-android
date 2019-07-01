@@ -37,6 +37,11 @@ class BookmarkAdapter : RecyclerView.Adapter<BookmarkAdapter.ViewHolder>() {
         }
     }
 
+    internal fun setBookmarks(bookmarks: List<Bookmark>) {
+        this.bookmarks = bookmarks
+        notifyDataSetChanged()
+    }
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(bookmark: Bookmark) {
             this.itemView.bookmarkTextView.text = bookmark.body

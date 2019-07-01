@@ -18,7 +18,6 @@ import xyz.thingapps.mindoasis.R
 import xyz.thingapps.mindoasis.adapter.MaximAdapter
 import xyz.thingapps.mindoasis.data.Bookmark
 import xyz.thingapps.mindoasis.util.COLLECTION_MAXIM
-import xyz.thingapps.mindoasis.util.InjectorUtils
 import xyz.thingapps.mindoasis.util.MaximCsvReader
 import xyz.thingapps.mindoasis.util.runOnIoThread
 import xyz.thingapps.mindoasis.viewmodel.BookmarkViewModel
@@ -55,9 +54,9 @@ class HomeFragment : Fragment(), AnkoLogger {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this@HomeFragment).get(HomeViewModel::class.java)
 
-        val factory = context?.let { InjectorUtils.providePlantListViewModelFactory(it) }
+//        val factory = context?.let { InjectorUtils.providePlantListViewModelFactory(it) }
         bookmarkViewModel =
-            ViewModelProviders.of(this@HomeFragment, factory).get(BookmarkViewModel::class.java)
+            ViewModelProviders.of(this@HomeFragment).get(BookmarkViewModel::class.java)
         bookmarkViewModel
 
         adapter.maximList = viewModel.maximList
@@ -69,7 +68,7 @@ class HomeFragment : Fragment(), AnkoLogger {
 
         adapter.onDoubleClick = { maxim ->
             runOnIoThread {
-                bookmarkViewModel.addBookmark(
+                bookmarkViewModel.insert(
                     Bookmark(
                         maxim.id,
                         maxim.index,
