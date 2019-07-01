@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mind Oasis</string>
+    <string name="app_name">띵언</string>
     <string name="title_bookmark">bookmark</string>
     <string name="title_share">share</string>
     <string name="title_settings">settings</string>
@@ -25,7 +25,7 @@
     <string name="no_bookmarks">북마크된 명언이 없습니다.\n명언을 더블 클릭하여 북마크에 추가하세요.</string>
 
 
-    <string name="mind_oasis_app_android_ko">마음오아시스 앱 Android</string>
+    <string name="mind_oasis_app_android_ko">띵언 앱 Android</string>
     <string name="all_rights_reserved_ko">Thing Apps All rights reserved</string>
     <string name="personal_info_terms_ko">개인정보 보호 및 약관</string>
     <string name="personal_info_policy_ko">개인정보 처리 방침</string>
