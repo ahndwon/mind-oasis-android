@@ -1,6 +1,5 @@
 package xyz.thingapps.thingphrase.viewmodel
 
-import androidx.databinding.Bindable
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import de.aaronoe.rxfirestore.getObservable
@@ -21,21 +20,6 @@ class HomeViewModel : ObservableViewModel(), AnkoLogger {
             notifyChange()
             field = value
         }
-
-    @Bindable
-    fun getBody(): String {
-        return maxim.body
-    }
-
-    @Bindable
-    fun getAuthor(): String {
-        return maxim.author
-    }
-
-    @Bindable
-    fun getCategory(): String {
-        return maxim.category
-    }
 
     fun getMaxim(index: Int, onSuccess: ((QuerySnapshot) -> Unit)? = null) {
         FirebaseFirestore.getInstance()
@@ -93,19 +77,6 @@ class HomeViewModel : ObservableViewModel(), AnkoLogger {
             info("list Observable failed : ", e)
         }).addTo(disposeBag)
 
-//        collectionReference
-//            .limit(30L)
-//            .get()
-//            .addOnSuccessListener { snapshots ->
-//                bookmarks.addAll(snapshots.toObjects(Maxim::class.java))
-//                for (shot in snapshots) {
-//                    info("getMaxim: " + shot.toObject(Maxim::class.java))
-//                }
-//                onSuccess?.invoke()
-//            }
-//            .addOnFailureListener {
-//                info("getMaxim failed : ", it)
-//            }
     }
 
     private fun getMaximCollections(index: Int): Observable<List<Maxim>> {

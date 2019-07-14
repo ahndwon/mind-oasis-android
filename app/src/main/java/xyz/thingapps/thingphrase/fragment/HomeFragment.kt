@@ -63,7 +63,6 @@ class HomeFragment : Fragment(), AnkoLogger {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this@HomeFragment).get(HomeViewModel::class.java)
 
-//        val factory = context?.let { InjectorUtils.providePlantListViewModelFactory(it) }
         bookmarkViewModel =
             ViewModelProviders.of(this@HomeFragment).get(BookmarkViewModel::class.java)
 

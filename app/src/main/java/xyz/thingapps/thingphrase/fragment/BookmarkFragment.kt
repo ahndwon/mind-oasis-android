@@ -48,18 +48,9 @@ class BookmarkFragment : Fragment(), AnkoLogger {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-//        val factory =
-//            context?.let { InjectorUtils.providePlantListViewModelFactory(it) }
 
         viewModel =
             ViewModelProviders.of(this@BookmarkFragment).get(BookmarkViewModel::class.java)
-//        adapter.bookmarks = viewModel.bookmarkList
-
-//
-//        if (viewModel.allBookmarks.value == null) {
-////            info("bookmark size : ${it.size}")
-//            view?.noBookmarksCardView?.visibility = View.VISIBLE
-//        }
 
         viewModel.allBookmarks.observe(this, Observer { bookmarks ->
             bookmarks?.let { adapter.setBookmarks(it) }

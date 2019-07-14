@@ -57,11 +57,6 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
                         .commit()
                     true
                 }
-//
-//                2 -> {
-//                    toast("Share")
-//                    true
-//                }
 
                 2 -> {
                     supportFragmentManager.beginTransaction()

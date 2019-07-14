@@ -15,7 +15,7 @@ class BookmarkViewModel(application: Application) : AndroidViewModel(application
     val allBookmarks: LiveData<List<Bookmark>>
 
     init {
-        val bookmarkDao = AppDatabase.getDatabase(application, viewModelScope).bookmarkDao()
+        val bookmarkDao = AppDatabase.getDatabase(application).bookmarkDao()
         repository = BookmarkRepository(bookmarkDao)
         allBookmarks = repository.allBookmarks()
     }
@@ -28,18 +28,3 @@ class BookmarkViewModel(application: Application) : AndroidViewModel(application
         repository.delete(bookmark)
     }
 }
-
-
-//class BookmarkViewModel internal constructor(
-//    private val bookmarkRepository: BookmarkRepository
-//) : ViewModel() {
-//    var bookmarkList: List<Bookmark> = emptyList()
-//
-//    fun addBookmark(bookmark: Bookmark) {
-//        bookmarkRepository.insert(bookmark)
-//    }
-//
-//    fun getBookmarks() {
-//        bookmarkList = bookmarkRepository.getBookmarks()
-//    }
-//}
