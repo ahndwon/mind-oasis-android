@@ -1,13 +1,13 @@
 # Mind Oasis Android
-Mind Oasis android client
-
-Shows korean maxims for motivations!
-Only one maxim is shown per day, but you can skip and see more maxims.
-Also has bookmark to keep your favorite maxims!
-
-Development based on Android MVVM architecture.
-Maxim data is stored in Firebase Firstore.
-Bookmarks are stored in sqlite database using AndroidX Room.
+Mind Oasis android client  
+  
+Shows korean maxims for motivations!  
+Only one maxim is shown per day, but you can skip and see more maxims.  
+Also has bookmark to keep your favorite maxims!  
+  
+Development based on Android MVVM architecture.  
+Maxim data is stored in Firebase Firstore.  
+Bookmarks are stored in sqlite database using AndroidX Room.  
 
 
 [Playstore link!](https://play.google.com/store/apps/details?id=xyz.thingapps.thingphrase)
