@@ -1,3 +1,5 @@
+.DS_Store
+
 lt application files
 *.apk
 *.ap_
