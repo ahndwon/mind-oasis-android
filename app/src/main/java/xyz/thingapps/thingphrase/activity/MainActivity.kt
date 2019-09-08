@@ -2,6 +2,8 @@ package xyz.thingapps.thingphrase.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.toast
@@ -20,10 +22,11 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     }
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        initAd()
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.fragmentContainer,
@@ -73,6 +76,13 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 
         setStatusBarColor(R.color.veryDarkNavy)
         setStatusBarIconDark(false)
+    }
+
+    private fun initAd() {
+        MobileAds.initialize(this) {}
+
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
     }
 
     override fun onBackPressed() {

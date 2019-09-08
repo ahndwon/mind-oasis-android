@@ -34,4 +34,10 @@
     <string name="share_app">앱 공유하기</string>
 
 
+    <string name="admob_app_id">ca-app-pub-3820525414951903~8018747206</string>
+    <string name="admob_banner_id">ca-app-pub-3820525414951903/6705665537</string>
+
+    <string name="admob_test_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>

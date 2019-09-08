@@ -22,7 +22,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1907030227
-        versionName "1.0.1"
+        versionName "1.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -40,6 +40,7 @@ android {
             minifyEnabled true
             shrinkResources true
             signingConfig signingConfigs.configs
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             versionNameSuffix "_debug"
         }
 
@@ -90,6 +91,9 @@ dependencies {
     // Firebase
     implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.google.firebase:firebase-firestore:20.1.0'
+
+    // Admob
+    implementation 'com.google.firebase:firebase-ads:18.2.0'
 
     // Crashlytics
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
