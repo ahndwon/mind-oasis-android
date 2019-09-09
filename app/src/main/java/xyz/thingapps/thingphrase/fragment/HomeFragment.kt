@@ -5,6 +5,7 @@ import android.animation.ValueAnimator
 import android.animation.ValueAnimator.INFINITE
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.firebase.firestore.FirebaseFirestore
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.home_fragment.view.*
@@ -38,6 +41,8 @@ class HomeFragment : Fragment(), AnkoLogger {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var bookmarkViewModel: BookmarkViewModel
+    private lateinit var popupAd: InterstitialAd
+
     private val adapter = MaximAdapter()
     private val disposeBag = CompositeDisposable()
 
@@ -67,6 +72,7 @@ class HomeFragment : Fragment(), AnkoLogger {
             ViewModelProviders.of(this@HomeFragment).get(BookmarkViewModel::class.java)
 
         setupAdapter()
+        setupPopupAd()
 
         val lastUpdate = activity?.sharedApp?.maximUpdate ?: 0L
         val lastUpdateDay = Instant.ofEpochMilli(lastUpdate).atZone(ZoneId.systemDefault())
@@ -143,6 +149,7 @@ class HomeFragment : Fragment(), AnkoLogger {
                 ).setItems(items) { _, position ->
                     when (position) {
                         0 -> {
+//                            showPopupAd()
                             val index = (0..MAX_INDEX).random()
                             activity?.sharedApp?.maximIndex = index
                             activity?.sharedApp?.maximUpdate = Instant.now().toEpochMilli()
@@ -160,6 +167,24 @@ class HomeFragment : Fragment(), AnkoLogger {
             view?.handImageView?.visibility = View.GONE
             view?.tutorialTextView?.visibility = View.GONE
         }
+    }
+
+    private fun showPopupAd() {
+        activity?.sharedApp?.let {
+            Log.d(HomeFragment::class.java.name, "popupCount : ${it.popupCount}")
+            it.popupCount = (it.popupCount ?: 0) + 1
+            if ((it.popupCount ?: 0) % 5 != 0) return
+        }
+
+        popupAd.show()
+    }
+
+    private fun setupPopupAd() {
+        if (context == null) return
+
+        popupAd = InterstitialAd(context)
+        popupAd.adUnitId = getString(R.string.admob_popup_id)
+        popupAd.loadAd(AdRequest.Builder().build())
     }
 
     private fun resetFragment() {

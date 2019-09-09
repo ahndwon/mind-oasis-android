@@ -40,6 +40,16 @@ class SharedApplication : Application() {
             }
         }
 
+    var popupCount: Int?
+        get() = preferences.getInt(PREFERENCE_POPUP_COUNT, 0)
+        set(value) {
+            if (value == null) {
+                preferences.edit().remove(PREFERENCE_POPUP_COUNT).apply()
+            } else {
+                preferences.edit().putInt(PREFERENCE_POPUP_COUNT, value).apply()
+            }
+        }
+
     private val preferences: SharedPreferences
         get() = getSharedPreferences(PREFERENCE_DOCUMENT_NAME, Context.MODE_PRIVATE)
 
@@ -58,6 +68,7 @@ class SharedApplication : Application() {
     companion object {
         const val PREFERENCE_LAST_MAXIM_UPDATE = "last_maxim_update"
         const val PREFERENCE_MAXIM_INDEX = "maxim_index"
+        const val PREFERENCE_POPUP_COUNT = "popup_count"
         const val PREFERENCE_BOOKMARK_TUTORIAL = "bookmark_tutorial"
         const val PREFERENCE_DOCUMENT_NAME = "xyz.thingapps.mindoasis"
     }
