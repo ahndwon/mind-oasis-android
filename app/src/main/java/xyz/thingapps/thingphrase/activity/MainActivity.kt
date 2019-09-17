@@ -11,8 +11,6 @@ import xyz.thingapps.thingphrase.R
 import xyz.thingapps.thingphrase.fragment.BookmarkFragment
 import xyz.thingapps.thingphrase.fragment.HomeFragment
 import xyz.thingapps.thingphrase.fragment.SettingsFragment
-import xyz.thingapps.thingphrase.util.setStatusBarColor
-import xyz.thingapps.thingphrase.util.setStatusBarIconDark
 
 class MainActivity : AppCompatActivity(), AnkoLogger {
     private var backPressedTime = 0L
@@ -74,8 +72,6 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
             }
         }
 
-        setStatusBarColor(R.color.veryDarkNavy)
-        setStatusBarIconDark(false)
     }
 
     private fun initAd() {

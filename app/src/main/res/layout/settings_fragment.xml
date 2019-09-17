@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/veryDarkNavy">
+    android:background="@drawable/bg_paper_fiber">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="40dp"
-        app:cardBackgroundColor="@color/darkNavy"
+        android:background="@drawable/bg_paper_fiber"
         app:cardCornerRadius="24dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="설정"
-                    android:textColor="@color/whiteDark"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -66,8 +66,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/darkNavy">
+                    android:layout_height="match_parent">
 
 
                     <TextView
@@ -76,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="26dp"
                         android:text="@string/mind_oasis_app_android_ko"
-                        android:textColor="@color/whiteDark"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toTopOf="@id/versionTextView"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +86,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:textColor="@color/whiteDark"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toTopOf="@id/allRightsReserved"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="24dp"
                         android:text="@string/all_rights_reserved_ko"
-                        android:textColor="@color/whiteDark"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

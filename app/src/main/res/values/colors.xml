@@ -8,7 +8,7 @@
     <color name="black">#000000</color>
     <color name="darkNavy">#103A69</color>
     <color name="veryDarkNavy">#13355A</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>2
     <color name="lightWhite">#eeeeee</color>
 
     <color name="whiteDark">#f4f4f4</color>
@@ -19,7 +19,9 @@
     <color name="textLightGray">#a2a2a2</color>
     <color name="textDarkGray">#7e7e7e</color>
 
+    <color name="statusBarColor">#ECEFEF</color>
+
     <drawable name="navigationSelected">#000000</drawable>
     <drawable name="navigationSelectedWhite">#FFFFFF</drawable>
-    <drawable name="navigationUnselected">#666666</drawable>
+    <drawable name="navigationUnselected">#888888</drawable>
 </resources>

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">오늘의 띵언</string>
+    <string name="app_name">마음 새로고침</string>
+    <!--    <string name="home_title">정신차리게 해주는 명언</string>-->
+    <string name="home_title">오늘의 새로고침</string>
     <string name="title_bookmark">bookmark</string>
     <string name="title_share">share</string>
     <string name="title_settings">settings</string>
@@ -23,10 +25,10 @@
     <string name="no">아니오</string>
 
     <string name="no_bookmarks">북마크된 명언이 없습니다.\n명언을 더블 클릭하여 북마크에 추가하세요.</string>
-    <string name="send_app_link_text">오늘의 띵언\n하루에 명언 한 개씩!\n
+    <string name="send_app_link_text">마음 새로고침\n하루에 명언 한 개씩!\n
         "https://play.google.com/store/apps/details?id=xyz.thingapps.thingphrase"</string>
 
-    <string name="mind_oasis_app_android_ko">띵언 앱 Android</string>
+    <string name="mind_oasis_app_android_ko">마음 새로고침 앱 Android</string>
     <string name="all_rights_reserved_ko">Thing Apps All rights reserved</string>
     <string name="personal_info_terms_ko">개인정보 보호 및 약관</string>
     <string name="personal_info_policy_ko">개인정보 처리 방침</string>

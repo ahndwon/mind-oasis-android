@@ -37,12 +37,17 @@ class SettingsFragment : Fragment() {
         view.policyButton.setOnClickListener { startActivity<PolicyActivity>() }
 
         view.creditButton.setOnClickListener {
-            CreditDialogFragment().show(fragmentManager, CreditDialogFragment::class.java.name)
+            fragmentManager?.let { it ->
+                CreditDialogFragment().show(
+                    it,
+                    CreditDialogFragment::class.java.name
+                )
+            }
         }
 
 
         val versionName =
-            activity?.packageManager?.getPackageInfo(activity?.packageName, 0)?.versionName
+            activity?.packageManager?.getPackageInfo(activity?.packageName ?: "", 0)?.versionName
         view.versionTextView.text = String.format(getString(R.string.version_name), versionName)
 
         return view
