@@ -57,7 +57,7 @@ class SharedApplication : Application() {
         super.onCreate()
         AndroidThreeTen.init(this)
         FirebaseApp.initializeApp(this)
-        MobileAds.initialize(this, getString(R.string.admob_app_id))
+        MobileAds.initialize(this, getString(R.string.admob_app_id_thing_piece))
 
 
         if (maximIndex == null) {

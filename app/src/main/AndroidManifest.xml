@@ -15,7 +15,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_app_id" />
+            android:value="@string/admob_app_id_thing_piece" />
 
         <activity
             android:name="xyz.thingapps.thingphrase.activity.MainActivity"

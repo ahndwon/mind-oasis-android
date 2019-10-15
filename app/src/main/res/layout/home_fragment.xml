@@ -49,12 +49,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home_title"
-        android:fontFamily="@font/hanna_air_ff"
         android:layout_marginTop="56dp"
         android:layout_marginStart="44dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/black"
+        style="@style/AppFont"
         app:layout_constraintStart_toStartOf="@id/maximRecyclerView"
         app:layout_constraintTop_toTopOf="@id/maximRecyclerView" />
 
