@@ -3,9 +3,9 @@ package xyz.thingapps.thingphrase
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
 import com.jakewharton.threetenabp.AndroidThreeTen
+import xyz.thingapps.thingphrase.util.AdUtil
 import xyz.thingapps.thingphrase.util.MAX_INDEX
 
 class SharedApplication : Application() {
@@ -57,7 +57,7 @@ class SharedApplication : Application() {
         super.onCreate()
         AndroidThreeTen.init(this)
         FirebaseApp.initializeApp(this)
-        MobileAds.initialize(this, getString(R.string.admob_app_id_thing_piece))
+        AdUtil.appInit(this)
 
 
         if (maximIndex == null) {

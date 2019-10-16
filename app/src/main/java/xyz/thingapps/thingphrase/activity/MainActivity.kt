@@ -2,8 +2,6 @@ package xyz.thingapps.thingphrase.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.toast
@@ -11,6 +9,7 @@ import xyz.thingapps.thingphrase.R
 import xyz.thingapps.thingphrase.fragment.BookmarkFragment
 import xyz.thingapps.thingphrase.fragment.HomeFragment
 import xyz.thingapps.thingphrase.fragment.SettingsFragment
+import xyz.thingapps.thingphrase.util.AdUtil
 
 class MainActivity : AppCompatActivity(), AnkoLogger {
     private var backPressedTime = 0L
@@ -25,6 +24,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initAd()
+
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.fragmentContainer,
@@ -75,10 +75,8 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     }
 
     private fun initAd() {
-        MobileAds.initialize(this) {}
-
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
+        AdUtil.activityInit(this, MainActivity::class.java.name)
+        AdUtil.setupBanner(adView)
     }
 
     override fun onBackPressed() {

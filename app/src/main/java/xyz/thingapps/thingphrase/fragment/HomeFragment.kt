@@ -5,7 +5,6 @@ import android.animation.ValueAnimator
 import android.animation.ValueAnimator.INFINITE
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,10 +27,7 @@ import xyz.thingapps.thingphrase.adapter.MaximAdapter
 import xyz.thingapps.thingphrase.data.Bookmark
 import xyz.thingapps.thingphrase.model.Maxim
 import xyz.thingapps.thingphrase.sharedApp
-import xyz.thingapps.thingphrase.util.COLLECTION_MAXIM
-import xyz.thingapps.thingphrase.util.MAX_INDEX
-import xyz.thingapps.thingphrase.util.MaximCsvReader
-import xyz.thingapps.thingphrase.util.isSameDay
+import xyz.thingapps.thingphrase.util.*
 import xyz.thingapps.thingphrase.viewmodel.BookmarkViewModel
 import xyz.thingapps.thingphrase.viewmodel.HomeViewModel
 import java.util.*
@@ -137,7 +133,7 @@ class HomeFragment : Fragment(), AnkoLogger {
 
         adapter.onDoubleClick = { maxim ->
             bookmark(maxim)
-
+            showPopupAd()
         }
 
         adapter.onLongClick = { maxim ->
@@ -170,13 +166,17 @@ class HomeFragment : Fragment(), AnkoLogger {
     }
 
     private fun showPopupAd() {
-        activity?.sharedApp?.let {
-            Log.d(HomeFragment::class.java.name, "popupCount : ${it.popupCount}")
-            it.popupCount = (it.popupCount ?: 0) + 1
-            if ((it.popupCount ?: 0) % 5 != 0) return
+        this@HomeFragment.context?.let {
+            AdUtil.showPopup(it, popupAd)
         }
 
-        popupAd.show()
+//        activity?.sharedApp?.let {
+//            Log.d(HomeFragment::class.java.name, "popupCount : ${it.popupCount}")
+//            it.popupCount = (it.popupCount ?: 0) + 1
+//            if ((it.popupCount ?: 0) % 5 != 0) return
+//        }
+//
+//        popupAd.show()
     }
 
     private fun setupPopupAd() {
@@ -184,6 +184,7 @@ class HomeFragment : Fragment(), AnkoLogger {
 
         popupAd = InterstitialAd(context)
         popupAd.adUnitId = getString(R.string.admob_popup_id)
+//        popupAd.adUnitId = getString(R.string.admob_test_popup_id)
         popupAd.loadAd(AdRequest.Builder().build())
     }
 
