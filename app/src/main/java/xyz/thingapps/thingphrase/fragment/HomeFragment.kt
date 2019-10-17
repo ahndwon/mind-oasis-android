@@ -68,7 +68,7 @@ class HomeFragment : Fragment(), AnkoLogger {
             ViewModelProviders.of(this@HomeFragment).get(BookmarkViewModel::class.java)
 
         setupAdapter()
-        setupPopupAd()
+//        setupPopupAd()
 
         val lastUpdate = activity?.sharedApp?.maximUpdate ?: 0L
         val lastUpdateDay = Instant.ofEpochMilli(lastUpdate).atZone(ZoneId.systemDefault())
@@ -133,7 +133,7 @@ class HomeFragment : Fragment(), AnkoLogger {
 
         adapter.onDoubleClick = { maxim ->
             bookmark(maxim)
-            showPopupAd()
+//            showPopupAd()
         }
 
         adapter.onLongClick = { maxim ->

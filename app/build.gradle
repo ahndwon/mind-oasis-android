@@ -21,8 +21,8 @@ android {
         applicationId "xyz.thingapps.thingphrase"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1910170110
-        versionName "1.1.3"
+        versionCode 1910171000
+        versionName "1.1.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

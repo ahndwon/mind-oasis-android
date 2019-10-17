@@ -55,5 +55,6 @@
     <string name="admob_banner_id">ca-app-pub-2372002333209736/8458448481</string>
 
     <string name="admob_popup_id">ca-app-pub-2372002333209736/9991022007</string>
+    <string name="description_splash_icon">splash icon</string>
 
 </resources>
