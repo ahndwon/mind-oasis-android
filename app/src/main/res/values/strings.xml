@@ -37,25 +37,29 @@
     <string name="description_splash_icon">splash icon</string>
 
 
-    <string name="admob_test_device">C696ECC628516D4352595D6251A997B8</string>
+    <string name="admob_test_device" translatable="false">C696ECC628516D4352595D6251A997B8</string>
 
-    <!--test ad unit id : ca-app-pub-3940256099942544~3347511713  -->
-    <!--test ad banner id : ca-app-pub-3940256099942544/6300978111  -->
-    <!--test ad popup id : ca-app-pub-3940256099942544/1033173712  -->
-
-    <!--ad unit id :      ca-app-pub-3820525414951903~8018747206  -->
-    <!--ad banner id : ca-app-pub-3820525414951903/6705665537  -->
-    <!--ad popup id : ca-app-pub-3820525414951903/9082818375  -->
-
-    <!--ad unit id thing_piece :      ca-app-pub-2372002333209736~8009099769  -->
-    <!--ad banner id thing_piece : ca-app-pub-2372002333209736/9991022007  -->
-    <!--ad popup id thing_piece : ca-app-pub-2372002333209736/8458448481  -->
+    <string name="admob_test_ad_unit_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_test_ad_banner_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_test_ad_popup_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
 
 
-    <string name="admob_app_id">ca-app-pub-2372002333209736~8009099769</string>
+    <string name="admob_gahlok24_ad_unit_id" translatable="false">ca-app-pub-3820525414951903~8018747206</string>
+    <string name="admob_gahlok24_ad_banner_id" translatable="false">ca-app-pub-3820525414951903/6705665537</string>
+    <string name="admob_gahlok24_ad_popup_id" translatable="false">ca-app-pub-3820525414951903/9082818375</string>
 
-    <string name="admob_banner_id">ca-app-pub-2372002333209736/9991022007</string>
 
-    <string name="admob_popup_id">ca-app-pub-2372002333209736/8458448481</string>
+    <string name="admob_thing_piece_ad_unit_id" translatable="false">ca-app-pub-2372002333209736~8009099769</string>
+    <string name="admob_thing_piece_ad_banner_id" translatable="false">ca-app-pub-2372002333209736/8458448481</string>
+    <string name="admob_thing_piece_ad_popup_id" translatable="false">ca-app-pub-2372002333209736/9991022007</string>
+
+    <string name="admob_mind_refresh_ad_unit_id" translatable="false">ca-app-pub-3882601283830191~3122961363</string>
+    <string name="admob_mind_refresh_ad_banner_id" translatable="false">ca-app-pub-3882601283830191/6451832287</string>
+    <string name="admob_mind_refresh_ad_popup_id" translatable="false">ca-app-pub-3882601283830191/7180312798</string>
+
+
+    <string name="admob_app_id" translatable="false">@string/admob_mind_refresh_ad_unit_id</string>
+    <string name="admob_banner_id" translatable="false">@string/admob_mind_refresh_ad_banner_id</string>
+    <string name="admob_popup_id" translatable="false">@string/admob_mind_refresh_ad_popup_id</string>
 
 </resources>

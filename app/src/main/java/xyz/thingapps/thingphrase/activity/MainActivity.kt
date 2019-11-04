@@ -18,8 +18,6 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         const val FINISH_INTERVAL_TIME = 2000L
     }
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

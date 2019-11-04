@@ -36,26 +36,4 @@
     <string name="share_app">앱 공유하기</string>
     <string name="description_splash_icon">splash icon</string>
 
-
-    <string name="admob_test_device">30D34B9CC3CE115A4709988113B1A824</string>
-
-    <!--test ad unit id : ca-app-pub-3940256099942544~3347511713  -->
-    <!--test ad banner id : ca-app-pub-3940256099942544/6300978111  -->
-    <!--test ad popup id : ca-app-pub-3940256099942544/1033173712  -->
-
-    <!--ad unit id :      ca-app-pub-3820525414951903~8018747206  -->
-    <!--ad banner id : ca-app-pub-3820525414951903/6705665537  -->
-    <!--ad popup id : ca-app-pub-3820525414951903/9082818375  -->
-
-    <!--ad unit id thing_piece :      ca-app-pub-2372002333209736~8009099769  -->
-    <!--ad banner id thing_piece : ca-app-pub-2372002333209736/8458448481  -->
-    <!--ad popup id thing_piece : ca-app-pub-2372002333209736/9991022007  -->
-
-
-    <string name="admob_app_id">ca-app-pub-2372002333209736~8009099769</string>
-
-    <string name="admob_banner_id">ca-app-pub-2372002333209736/8458448481</string>
-
-    <string name="admob_popup_id">ca-app-pub-2372002333209736/9991022007</string>
-
 </resources>
