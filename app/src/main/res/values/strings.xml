@@ -50,16 +50,16 @@
 
 
     <string name="admob_thing_piece_ad_unit_id" translatable="false">ca-app-pub-2372002333209736~8009099769</string>
-    <string name="admob_thing_piece_ad_banner_id" translatable="false">ca-app-pub-2372002333209736/8458448481</string>
-    <string name="admob_thing_piece_ad_popup_id" translatable="false">ca-app-pub-2372002333209736/9991022007</string>
+    <string name="admob_thing_piece_ad_banner_id" translatable="false">ca-app-pub-2372002333209736/9991022007</string>
+    <string name="admob_thing_piece_ad_popup_id" translatable="false">ca-app-pub-2372002333209736/8458448481</string>
 
     <string name="admob_mind_refresh_ad_unit_id" translatable="false">ca-app-pub-3882601283830191~3122961363</string>
     <string name="admob_mind_refresh_ad_banner_id" translatable="false">ca-app-pub-3882601283830191/6451832287</string>
     <string name="admob_mind_refresh_ad_popup_id" translatable="false">ca-app-pub-3882601283830191/7180312798</string>
 
 
-    <string name="admob_app_id" translatable="false">@string/admob_mind_refresh_ad_unit_id</string>
-    <string name="admob_banner_id" translatable="false">@string/admob_mind_refresh_ad_banner_id</string>
-    <string name="admob_popup_id" translatable="false">@string/admob_mind_refresh_ad_popup_id</string>
+    <string name="admob_app_id" translatable="false">@string/admob_thing_piece_ad_unit_id</string>
+    <string name="admob_banner_id" translatable="false">@string/admob_thing_piece_ad_banner_id</string>
+    <string name="admob_popup_id" translatable="false">@string/admob_thing_piece_ad_popup_id</string>
 
 </resources>
